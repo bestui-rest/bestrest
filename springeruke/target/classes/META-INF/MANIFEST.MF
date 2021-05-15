@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springeruke
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.eruke
+Build-Jdk: 1.8.0_151
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springeruke
+Created-By: Maven Integration for Eclipse
+

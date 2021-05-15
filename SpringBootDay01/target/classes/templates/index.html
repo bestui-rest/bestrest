@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ 	<link rel="shortcut icon" th:href="@{/favicon.ico}"/>
+ 	<link rel="bookmark" th:href="@{/favicon.ico}"/>
+	<meta charset="UTF-8">
+   <title>Insert title here</title>
+
+</head>
+<body>
+  [[@{/}]]
+  [[${#httpServletRequest.getContextPath()}]]
+</body>
+</html>

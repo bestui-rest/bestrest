@@ -1,0 +1,17 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eurekacenter
+  security:
+    user: 
+      name: zyd
+      password: zydz
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false 
+    fetch-registry: false 
+    serviceUrl:
+      defaultZone: http://zyd:zydz@localhost:8761/eureka/

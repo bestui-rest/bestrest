@@ -1,0 +1,25 @@
+#springboot2.X
+server:
+  port: 8085
+  servlet:
+     context-path: /dubbo-comsume    
+dubbo:
+  application:
+    name:  dubbo-comsume
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+    check: false
+  monitor:
+    protocol: register
+  consumer:
+    check:  false
+    timeout: 3000
+
+spring:
+  datasource:
+    username: aml
+    password: aml
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    

@@ -1,0 +1,18 @@
+server:
+    port: 8111
+spring:
+  application:
+      name: provider
+  security:
+    user: 
+      name: zyd
+      password: zydz
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: eurekacenter    
+eureka:
+    client:
+        serviceUrl:
+          defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761/eureka/

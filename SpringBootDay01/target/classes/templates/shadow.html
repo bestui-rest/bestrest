@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="shortcut icon" th:href="@{/favicon.ico}"/>
+ 	<link rel="bookmark" th:href="@{/favicon.ico}"/>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" 
+th:src="@{/js/jquery.min.js}"></script>
+</head>
+<script th:inline="javascript">
+$(function(){
+
+	
+});
+function test(){
+	$(".shadow").show();
+}
+function test2(){
+	alert("ok");
+}
+</script>
+<style type="text/css">
+.jkl{
+height:100%;
+width:100%;
+background:rgb(255,0,0);
+}
+.shadow{
+height:1230px;
+width:1230px;
+background:rgb(	220,220,220);
+position:absolute;
+opacity:0.6;
+top:0;
+display:none;
+z-index:20;
+}
+.dd{
+	
+}
+.content{
+z-index:30;
+position:absolute;
+top:0;
+}
+</style>
+<body>
+<h1>111</h1>
+<h1>111</h1>
+<h1>111</h1>
+<h1>111</h1>
+<h1>111</h1>
+<h1>111</h1>
+<h1>111</h1>
+<h1>111</h1>
+<h1>111</h1>
+<input type="button" th:value="提交" onclick="test();"/>
+<div class="shadow">
+  <div class="content">
+        <input type="button" th:value="提交" onclick="test2();"/>
+  </div>
+</div>
+
+</body>
+</html>

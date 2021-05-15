@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyd.dao.UserDao">
+ 
+ 
+    <select id="selectUser" resultType="com.zyd.entity.User" parameterType="com.zyd.entity.User" >
+        select username,password,organkey from T00_USER where username= #{username} 
+    </select>
+ 
+</mapper>
