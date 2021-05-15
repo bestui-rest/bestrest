@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- root element,all element must in this element -->
+<root>
+   
+    <database>
+        <dbtype>oracle</dbtype>
+        <conn_type>1</conn_type><!-- 数据库连接方式 1：ibaits  2：jdbc -->
+        <db_substr>SUBSTR</db_substr>
+         <idtype>sequence</idtype>
+        <!-- <seqbeginsql>select</seqbeginsql> --><!-- oracle -->
+        <seqbeginsqlspace>yes</seqbeginsqlspace>
+       <!--<seqendsql>.Nextval from dual</seqendsql> --><!-- oracle -->
+        <seqendsqlspace>no</seqendsqlspace>
+        <idbegin>200</idbegin>
+        <idtablename>t00_sequence</idtablename>
+        <charset>gbk</charset>
+    </database>
+    <organkey_zonghang>999009</organkey_zonghang>
+     <cache>
+        <jcs>
+            <switch>on</switch>
+        </jcs>
+    </cache>
+     <sysparam>
+        <datastartyear>2011</datastartyear>
+        <datastartmonth>01</datastartmonth>
+        <datastartday>01</datastartday>
+    </sysparam>
+    <data>
+    <!-- add for 报表工具 start -->
+    	<!-- data root 数据文件保存的根 -->
+    	<dir_root>D:/java_team/Genuitec/Workspaces/AMLProj5.1/src/main/webapp/WEB-INF/aml_data/</dir_root>
+        <!-- export template dir 相对路径 -->
+        <template>template</template>
+        <!-- edit file in temp dir 相对路径 -->
+        <dir_temp>temp</dir_temp>
+        <dir_report>reporttpl</dir_report>
+        <!-- 存放脚本相对路径 -->
+        <dir_script>script</dir_script>
+
+        <!-- upload dir -->
+        <import>D:/aml/upload/</import>
+        <!-- upload file size. Units:KB -->
+        <size_limit>20000</size_limit>
+        <!-- create sub dir. year, month, day -->
+        <dir_date>month</dir_date>
+     <!-- add for 报表工具  end -->
+        <export>D:/aml/download/</export>
+        <import>D:/aml/upload/</import>
+        <isreplace>0</isreplace>
+        <reportBaseName>reportBase.xls</reportBaseName>
+        <reportListName>reportList.xls</reportListName> 
+    </data>
+    <root_path>aml</root_path> 
+    <portal>
+        <pab>/amlweb/amlapp/bin/verify.pse</pab>
+        <out>/amlweb/amlapp/bin/portal.out</out>   
+    </portal>
+    <bm>
+        <serverhost>10.6.8.15</serverhost>
+        <serverport>8081</serverport>
+    </bm>
+     <rule>
+       <bath_account>2000</bath_account>
+       <obj_type>1</obj_type>
+       <case_curr_type>1</case_curr_type>
+       <case_validate>1</case_validate>
+     </rule>
+     <blacklist_csvPath>blacklist</blacklist_csvPath>
+      <!-- add by chenhao date:2010-05-13 -->
+     <split_table>
+     	<split_ind>0</split_ind>
+     </split_table>
+     <acct_risk>0</acct_risk>
+     <risk_move_level>1023,1022</risk_move_level>
+     <bakflag>2</bakflag><!-- 2评级半年粒度时备份历史表不按日期  1按日期备份历史表 --> 
+     
+        <!-- 当t87_syspara中的 参数02的参数值为1 （后台计算时控制前台不允许登录） -->
+     <!-- 则需要用到jndi_name的配置去取得数据库的连接-->    
+     <!-- TOMCAT和WEBsphere配置格式:java:comp/env/jdbc/aml--> 
+     <!-- weblogic配置格式:jdbc/aml-->
+     <!-- jboss配置格式:java:jdbc/aml-->  
+     <jndi_name>java:comp/env/jdbc/aml</jndi_name>
+</root>

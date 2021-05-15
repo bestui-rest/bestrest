@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.ist.t47.T47Fin">
+	<!-- 查询全部员工的映射配置 -->
+	<select id="getT47Log"
+		resultType="com.ist.t47.common.T47Flog"  parameterType="com.ist.t47.common.T47Flog">
+		select 	 xqFileName,mwFileName,mingwStatus,
+         miFileName,miStatus,errmsg,Verification_DT,
+         Verification_BATCH,Verification_SEQ from T47_FINLOG
+		where 1=1 
+		<if test="xqFileName != null">
+			and xqFileName = #{xqFileName}
+		</if>
+			<if test="mingwStatus != null">
+			and mingwStatus = #{mingwStatus}
+		</if>
+			<if test="mwFileName != null">
+			and mwFileName = #{mwFileName}
+		</if>
+			<if test="miFileName != null">
+			and miFileName = #{miFileName}
+		</if>
+			<if test="miStatus != null">
+			and miStatus = #{miStatus}
+		</if>
+			<if test="Verification_DT != null">
+			and Verification_DT = #{Verification_DT}
+		</if>
+			<if test="Verification_BATCH != null">
+			and Verification_BATCH = #{Verification_BATCH}
+		</if>
+		<if test="Verification_SEQ != null">
+			and Verification_SEQ = #{Verification_SEQ}
+		</if>
+	</select>
+	<insert id="insertT47Log"
+		parameterType="com.ist.t47.common.T47Flog">
+	insert into T47_FINLOG(	xqFileName,mwFileName,mingwStatus,
+         miFileName,miStatus,Verification_DT,
+         Verification_BATCH,Verification_SEQ) 
+		values (#{xqFileName},#{mwFileName},#{mingwStatus},
+         #{miFileName},#{miStatus},#{Verification_DT},
+         #{Verification_BATCH},#{Verification_SEQ})
+	</insert>
+	
+	<!-- 金融查询 -->
+	<insert id="insertInnerDao" parameterType="com.ist.t47.common.InnerDao">              
+      INSERT INTO t47_finsearch(people_id,xm,sfzh,hzsfzh,verification_dt,verification_batch,verification_seq)  
+      VALUES 
+           (      #{people_id},  
+                  #{xm},  
+                  #{sfzh},  
+                  #{hzsfzh},  
+                  #{verification_dt},  
+                  #{verification_batch},  
+                  #{verification_seq}                   
+          )    
+  </insert> 
+	<delete id="delInnerDao" parameterType="com.ist.t47.common.InnerDao" >
+		delete from T47_finsearch where verification_dt=#{verification_dt}
+  and verification_batch=#{verification_batch} and verification_seq=#{verification_seq}
+	</delete>
+	<update id="matchInnerDao" parameterType="com.ist.t47.common.InnerDao" >
+		<!--  call finalsearch(#verification_dt#,#verification_batch#,#verification_seq#)-->
+		call T47FINAL(#{verification_dt},#{verification_batch},#{verification_seq})
+	</update>
+<select id="getOuterDao" parameterType="com.ist.t47.common.InnerDao" resultType="com.ist.t47.common.OuterDao">
+ select A.People_Id, A.xm,A.sfzh,A.kh_id,A.zje,A.Lccpzjz,A.ZHXX,A.Jyjl,A.Lccp,verification_dt,
+ A.verification_batch,A.acct_num,A.trans_num,A.verification_seq from T47_FIN_RET A 
+ where  A.Verification_Dt=#{verification_dt}
+  and A.verification_batch=#{verification_batch} and A.verification_seq=#{verification_seq} AND A.kh_id !='KSTRING'
+  AND A.kh_id is not null
+	</select>
+		<update id="updateOuterDao" parameterType="com.ist.t47.common.OuterDao" >
+update T47_FIN_RET A set A.ZHXX=#{zhxx},A.Jyjl=#{jyjl}
+ where  A.sfzh=#{sfzh}
+  and A.verification_batch=#{verification_batch} and A.verification_seq=#{verification_seq}
+ AND  A.Verification_Dt=#{verification_dt}
+  AND A.People_Id=#{people_id}
+	</update>
+	<select id="selAcctOuterDao" parameterType="com.ist.t47.common.OuterDao" resultType="com.ist.t47.common.AcctTransDao">
+select A.zh,A.zhlx,A.khh,A.zhje from T47_FIN_RETACCT A 
+ where  A.sfzh=#{sfzh}
+  and A.verification_batch=#{verification_batch} and A.verification_seq=#{verification_seq}
+  AND A.Verification_Dt=#{verification_dt}
+  AND A.People_Id=#{people_id}
+	</select>
+	<select id="selectTransOuterDao" parameterType="com.ist.t47.common.OuterDao" resultType="com.ist.t47.common.AcctTransDao">
+Select A.jyrq,A.jyje from  T47_FIN_RETTRANS A
+ where  A.sfzh=#{sfzh}
+  and A.verification_batch=#{verification_batch} and A.verification_seq=#{verification_seq}
+  AND   A.Verification_Dt=#{verification_dt}
+  AND A.People_Id=#{people_id}
+	</select>
+<update id="upT47Status"  parameterType="com.ist.t47.common.T47Flog">
+		update  T47_FINLOG set mingwStatus=#{mingwStatus},miStatus=#{miStatus},errmsg=#{errmsg}
+		where xqFileName=#{xqFileName}		
+	</update>
+	<update id="updataT47LogF"  parameterType="com.ist.t47.common.T47Flog">
+		update  T47_FINLOG set miStatus=#{miStatus}
+		where xqFileName=#{xqFileName}		
+	</update>
+</mapper> 

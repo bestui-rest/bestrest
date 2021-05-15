@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet-mapping>
+    <servlet-name>TestControll</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+<servlet-mapping>
+    <servlet-name>TestControllE</servlet-name>
+    <url-pattern>/test.do</url-pattern>
+  </servlet-mapping>
+   
+
+ <servlet>
+	  <servlet-name>TestControll</servlet-name>
+	  <servlet-class>com.controller.TestControll</servlet-class>
+  </servlet>
+  
+  <servlet>
+	  <servlet-name>TestControllE</servlet-name>
+	  <servlet-class>com.controller.TestControllE</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  
+  
+
+
+
+  <filter>
+  	<filter-name>loginFilter</filter-name>
+  	<filter-class>com.filter.loginFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>loginFilter</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+</web-app>

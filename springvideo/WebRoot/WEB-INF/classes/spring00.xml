@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+	xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd" >
+
+<util:properties location="classpath:db.properties" id="dbp"> </util:properties>
+	
+<bean class="org.apache.commons.dbcp.BasicDataSource" id="1212">
+	<property name="driverClassName" value="#{dbp.driver}"></property>
+	<property name="url" value="#{dbp.url}"></property>
+	<property name="username" value="#{dbp.username}"></property>
+	<property name="password" value="#{dbp.pwd}"></property>
+</bean>
+
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="mapperLocations" value="classpath:com/zyd/map/*.xml"></property>
+	<property name="dataSource" ref="1212"></property>
+	</bean>
+	
+	 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	 <property name="basePackage" value="com.zyd.dao"></property>  
+	 <property name="annotationClass" value="com.zyd.dao.TestSca"></property><!-- 只扫描带注解 TestSca的-->
+ <!--  <property name="markerInterface" value="com.zyd.map.Gh"></property>--><!-- 只扫描继承接口Gh的 -->
+	 </bean>
+
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/">
+	</property>
+	<property name="suffix" value=".jsp"></property>
+</bean>
+
+<context:component-scan base-package="com.zyd"></context:component-scan>	
+<mvc:interceptors>
+			<mvc:interceptor>
+				<!-- 需要拦截的URL -->
+				<mvc:mapping path="/*/*"/>
+				
+				<!-- 不需要拦截的URL -->
+				<mvc:exclude-mapping path="/main/toMain.do"/>
+				<mvc:exclude-mapping path="/login/*"/>
+				<mvc:exclude-mapping path="/register/*"/>
+				<bean class="com.zyd.cont.LanJIe"/>
+			</mvc:interceptor>
+		</mvc:interceptors>
+<mvc:annotation-driven></mvc:annotation-driven>
+
+<!-- 声明事务管理组件 -->
+	<bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="1212"/>
+	</bean>
+	<tx:annotation-driven transaction-manager="dataSourceTransactionManager"></tx:annotation-driven>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

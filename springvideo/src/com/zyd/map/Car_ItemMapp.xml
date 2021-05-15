@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.zyd.dao.Car_It">
+<insert id="insertCar_it" parameterType="com.zyd.bean.Car_Item" useGeneratedKeys="true" keyProperty="id"> 
+insert into xc_car_item values(#{c_id},#{i_id});
+</insert>
+<delete id="deleteCarItemByItemId" parameterType="java.lang.Integer">
+delete from xc_car_item where i_id=#{id}
+</delete>
+ </mapper>

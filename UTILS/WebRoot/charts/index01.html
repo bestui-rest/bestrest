@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>YLMarquee图片向上滚动演示_dowebok</title>
+<style>
+#scroll { width: 300px;height:300px; margin: 20px auto 0; border:1px solid #ccc;}
+#scroll li { float: left;}
+#scroll img { display: block;}
+</style>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/YLMarquee-1.1.min.js"></script>
+<script>
+$(function(){
+	$("#scroll").YlMarquee({
+        vertical : true,
+        visible : 2
+    });
+});
+</script>
+</head>
+
+<body>
+<h1>YLMarquee图片向上滚动演示</h1>
+
+<div id="scroll">
+    <ul>
+        <li><img src="./images/Chrysanthemum.jpg" /></li>
+		<li><img src="./images/Desert.jpg" /></li>
+		<li><img src="./images/Koala.jpg" /></li>
+		<li><img src="./images/Lighthouse.jpg" /></li>
+		<li><img src="./images/Penguins.jpg" /></li>
+		<li><img src="./images/Tulips.jpg" /></li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.zyd.dao.CourseContentDao">
+ <select id="findAll" resultType="com.zyd.bean.CourseContent">
+select * from xc_course_content
+ </select>
+<select id="findContentByDir" resultType="com.zyd.bean.CourseContent" parameterType="integer">
+ select xc_course_content.* from xc_course_content join xc_course_direction_content on xc_course_content.id
+ =xc_course_direction_content.cc_id
+ <where>
+ <if test="id!=0"> <!-- test属性中的id可以是 map的key值   也可以是-->
+ xc_course_direction_content.cd_id=#{id}
+ </if>
+ 
+ 
+ </where>
+</select>
+
+ </mapper>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+ <script type="text/javascript">
+var option = {
+        title:{
+            text:'饼图'
+        },
+        tooltip : {  
+            trigger: 'item',  
+            formatter: "{a} <br/>{b} :{c} ({d}%)"  
+        },  
+        series:[{
+            name:'访问量',
+            type:'pie',
+            radius:'80%',
+            data:[
+                {name:"智联招聘",value:600},
+                {name:"51job",value:310},
+                {name:"拉钩",value:200},
+                {name:"Boss直聘",value:800}
+            ]
+        }]
+    };
+// 绘制图表。
+echarts.init(document.getElementById('main')).setOption(option);
+       
+ </script>
+
+</body>
+</html>

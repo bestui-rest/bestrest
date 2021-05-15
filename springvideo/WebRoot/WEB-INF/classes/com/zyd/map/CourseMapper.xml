@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.zyd.dao.CourseDao">
+ <select id="findAll" resultType="com.zyd.bean.Course">
+select * from xc_course where content_id>2 and price>0
+ </select>
+  <select id="findNewCou" resultType="com.zyd.bean.Course">
+select * from xc_course where  price>0
+ </select>
+ <select id="findById" resultType="com.zyd.bean.Course" parameterType="integer">
+ select * from xc_course where id=#{id}
+ </select>
+  <select id="findAllByDirID" resultType="com.zyd.bean.Course" parameterType="java.util.Map">
+ select * from xc_course
+ <where>
+ <if test="coursedir!=0">
+  direction_id=#{coursedir}
+  </if>
+ <if test="contentid!=0">
+ and content_id=#{contentid}
+ </if>
+ </where>
+ limit #{page},10
+ </select>
+  <select id="findAllAll" resultType="com.zyd.bean.Course">
+ select * from xc_course 
+ </select>
+
+ </mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.zyd.dao.CarDao">
+<select id="findById" resultType="com.zyd.bean.Cart" parameterType="integer">
+select * from xc_car where u_id=#{id}
+</select>
+<insert id="insertcart" parameterType="com.zyd.bean.Cart" useGeneratedKeys="true" keyProperty="id"> 
+insert into xc_car values(null,#{userid})
+</insert>
+ </mapper>

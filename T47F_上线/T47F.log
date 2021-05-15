@@ -1,0 +1,94 @@
+javax.crypto.BadPaddingException: Given final block not properly padded
+	at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+	at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+	at com.sun.crypto.provider.DESCipher.engineDoFinal(DashoA13*..)
+	at javax.crypto.Cipher.doFinal(DashoA13*..)
+	at com.ist.t47.common.DESUtil.decrypt(DESUtil.java:62)
+	at com.ist.t47.common.JSonUtil.readJson(JSonUtil.java:52)
+	at com.ist.t47.T47_Main.writeTo(T47_Main.java:232)
+	at com.ist.t47.T47_Main.main(T47_Main.java:161)
+java.lang.NullPointerException
+	at com.ist.t47.common.CopyBean.copyIn(CopyBean.java:23)
+	at com.ist.t47.T47_Main.writeTo(T47_Main.java:241)
+	at com.ist.t47.T47_Main.main(T47_Main.java:161)
+javax.crypto.BadPaddingException: Given final block not properly padded
+	at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+	at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+	at com.sun.crypto.provider.DESCipher.engineDoFinal(DashoA13*..)
+	at javax.crypto.Cipher.doFinal(DashoA13*..)
+	at com.ist.t47.common.DESUtil.decrypt(DESUtil.java:62)
+	at com.ist.t47.common.JSonUtil.readJson(JSonUtil.java:52)
+	at com.ist.t47.T47_Main.writeTo(T47_Main.java:232)
+	at com.ist.t47.T47_Main.main(T47_Main.java:161)
+java.lang.NullPointerException
+	at com.ist.t47.common.CopyBean.copyIn(CopyBean.java:23)
+	at com.ist.t47.T47_Main.writeTo(T47_Main.java:241)
+	at com.ist.t47.T47_Main.main(T47_Main.java:161)
+javax.crypto.BadPaddingException: Given final block not properly padded
+	at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+	at com.sun.crypto.provider.SunJCE_f.b(DashoA13*..)
+	at com.sun.crypto.provider.DESCipher.engineDoFinal(DashoA13*..)
+	at javax.crypto.Cipher.doFinal(DashoA13*..)
+	at com.ist.t47.common.DESUtil.decrypt(DESUtil.java:62)
+	at com.ist.t47.common.JSonUtil.readJson(JSonUtil.java:52)
+	at com.ist.t47.T47_Main.writeTo(T47_Main.java:232)
+	at com.ist.t47.T47_Main.main(T47_Main.java:161)
+java.lang.NullPointerException
+	at com.ist.t47.common.CopyBean.copyIn(CopyBean.java:23)
+	at com.ist.t47.T47_Main.writeTo(T47_Main.java:241)
+	at com.ist.t47.T47_Main.main(T47_Main.java:161)
+ingsize143
+2018-10-09 12:25:35,667 INFO [com.ist.t47.T47_Main] - 开始执行temp-->got_data_inner&db
+2018-10-09 12:25:35,667 INFO [com.ist.t47.T47_Main] - 入库3
+2018-10-09 12:25:35,679 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ooo Using Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:35,679 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ==>  Preparing: insert into T47_FINLOG( xqFileName,mwFileName,mingwStatus, miFileName,miStatus,Verification_DT, Verification_BATCH,Verification_SEQ) values (?,?,?, ?,?,?, ?,?) 
+2018-10-09 12:25:35,679 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ==> Parameters: 000003_B0017B212000002_01.txt(String), B0017B212000002_S0011H212000001_01check.txt(String), 1(String), B0017B212000002_S0011H212000001_01.txt(String), 1(String), 0000-03-(String), B0017B212000002(String), 01(String)
+2018-10-09 12:25:35,694 DEBUG [com.ist.t47.T47Fin.insertT47Log] - <==    Updates: 1
+2018-10-09 12:25:35,694 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:35,728 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ooo Using Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:35,729 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ==>  Preparing: insert into T47_FINLOG( xqFileName,mwFileName,mingwStatus, miFileName,miStatus,Verification_DT, Verification_BATCH,Verification_SEQ) values (?,?,?, ?,?,?, ?,?) 
+2018-10-09 12:25:35,730 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ==> Parameters: 20181122_B0017B212000002_01.txt(String), B0017B212000002_S0011H212000001_01check.txt(String), 1(String), B0017B212000002_S0011H212000001_01.txt(String), 1(String), 2018-11-22(String), B0017B212000002(String), 01(String)
+2018-10-09 12:25:35,732 DEBUG [com.ist.t47.T47Fin.insertT47Log] - <==    Updates: 1
+2018-10-09 12:25:35,732 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:35,739 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ooo Using Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:35,739 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ==>  Preparing: insert into T47_FINLOG( xqFileName,mwFileName,mingwStatus, miFileName,miStatus,Verification_DT, Verification_BATCH,Verification_SEQ) values (?,?,?, ?,?,?, ?,?) 
+2018-10-09 12:25:35,739 DEBUG [com.ist.t47.T47Fin.insertT47Log] - ==> Parameters: 20180101_B0017B212000002_01.txt(String), B0017B212000002_S0011H212000001_01check.txt(String), 1(String), B0017B212000002_S0011H212000001_01.txt(String), 1(String), 2018-01-01(String), B0017B212000002(String), 01(String)
+2018-10-09 12:25:35,740 DEBUG [com.ist.t47.T47Fin.insertT47Log] - <==    Updates: 1
+2018-10-09 12:25:35,740 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:35,741 INFO [com.ist.t47.T47_Main] - 获取处理文件列表
+2018-10-09 12:25:35,741 DEBUG [com.ist.t47.T47Fin.getT47Log] - ooo Using Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:35,742 DEBUG [com.ist.t47.T47Fin.getT47Log] - ==>  Preparing: select xqFileName,mwFileName,mingwStatus, miFileName,miStatus,errmsg,Verification_DT, Verification_BATCH,Verification_SEQ from T47_FINLOG where 1=1 and miStatus = ? 
+2018-10-09 12:25:35,742 DEBUG [com.ist.t47.T47Fin.getT47Log] - ==> Parameters: 1(String)
+2018-10-09 12:25:35,754 DEBUG [com.ist.t47.T47Fin.getT47Log] - <==      Total: 3
+2018-10-09 12:25:35,754 INFO [com.ist.t47.T47_Main] - 获取到dbdealFilStringsize3
+2018-10-09 12:25:35,754 INFO [com.ist.t47.T47_Main] - 正在解密入库处理文件列表t47_log-->t47_finch
+2018-10-09 12:25:35,755 INFO [com.ist.t47.T47_Main] - 正在解密入库处理文件列表inner-->t47_finch3
+2018-10-09 12:25:36,167 INFO [com.ist.t47.common.JSonUtil] - 获取到的数据:[null]
+2018-10-09 12:25:36,170 INFO [com.ist.t47.common.JSonUtil] - replaceAll后的数据:[null]
+2018-10-09 12:25:36,464 INFO [com.ist.t47.common.JSonUtil] - mapper.readValue()后的数据：[null]
+2018-10-09 12:25:36,465 DEBUG [com.ist.t47.T47Fin.upT47Status] - ooo Using Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,465 DEBUG [com.ist.t47.T47Fin.upT47Status] - ==>  Preparing: update T47_FINLOG set mingwStatus=?,miStatus=?,errmsg=? where xqFileName=? 
+2018-10-09 12:25:36,466 DEBUG [com.ist.t47.T47Fin.upT47Status] - ==> Parameters: 5(String), 5(String),  匹配出错！(String), 000003_B0017B212000002_01.txt(String)
+2018-10-09 12:25:36,478 DEBUG [com.ist.t47.T47Fin.upT47Status] - <==    Updates: 1
+2018-10-09 12:25:36,478 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,481 INFO [com.ist.t47.common.JSonUtil] - 获取到的数据:[null]
+2018-10-09 12:25:36,481 INFO [com.ist.t47.common.JSonUtil] - replaceAll后的数据:[null]
+2018-10-09 12:25:36,485 INFO [com.ist.t47.common.JSonUtil] - mapper.readValue()后的数据：[null]
+2018-10-09 12:25:36,485 DEBUG [com.ist.t47.T47Fin.upT47Status] - ooo Using Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,485 DEBUG [com.ist.t47.T47Fin.upT47Status] - ==>  Preparing: update T47_FINLOG set mingwStatus=?,miStatus=?,errmsg=? where xqFileName=? 
+2018-10-09 12:25:36,485 DEBUG [com.ist.t47.T47Fin.upT47Status] - ==> Parameters: 5(String), 5(String),  匹配出错！(String), 20181122_B0017B212000002_01.txt(String)
+2018-10-09 12:25:36,486 DEBUG [com.ist.t47.T47Fin.upT47Status] - <==    Updates: 1
+2018-10-09 12:25:36,486 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,491 INFO [com.ist.t47.common.JSonUtil] - 获取到的数据:[null]
+2018-10-09 12:25:36,491 INFO [com.ist.t47.common.JSonUtil] - replaceAll后的数据:[null]
+2018-10-09 12:25:36,494 INFO [com.ist.t47.common.JSonUtil] - mapper.readValue()后的数据：[null]
+2018-10-09 12:25:36,494 DEBUG [com.ist.t47.T47Fin.upT47Status] - ooo Using Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,494 DEBUG [com.ist.t47.T47Fin.upT47Status] - ==>  Preparing: update T47_FINLOG set mingwStatus=?,miStatus=?,errmsg=? where xqFileName=? 
+2018-10-09 12:25:36,495 DEBUG [com.ist.t47.T47Fin.upT47Status] - ==> Parameters: 5(String), 5(String),  匹配出错！(String), 20180101_B0017B212000002_01.txt(String)
+2018-10-09 12:25:36,496 DEBUG [com.ist.t47.T47Fin.upT47Status] - <==    Updates: 1
+2018-10-09 12:25:36,496 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,497 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Resetting autocommit to true on JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,497 DEBUG [org.apache.ibatis.transaction.jdbc.JdbcTransaction] - Closing JDBC Connection [oracle.jdbc.driver.T4CConnection@b76fa]
+2018-10-09 12:25:36,497 DEBUG [org.apache.ibatis.datasource.pooled.PooledDataSource] - Returned connection 751354 to pool.
+2018-10-09 12:25:36,497 INFO [com.ist.t47.T47_Main] - 任务完成 资源关闭成功
+2018-10-09 12:25:36,497 INFO [com.ist.t47.T47_Main] - 推送0个加密文件

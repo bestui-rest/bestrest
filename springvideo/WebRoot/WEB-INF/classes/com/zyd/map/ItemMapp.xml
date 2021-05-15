@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.zyd.dao.ItemDao">
+<insert id="insert" parameterType="com.zyd.bean.Items" useGeneratedKeys="true" keyProperty="id"> 
+insert into xc_item values(null,#{c_id},#{c_name},#{c_picture},#{c_price},#{add_time},#{remove_time})
+</insert>
+<select id="findAllCourseIDByC_Id" resultType="java.lang.Integer" parameterType="integer">
+select xc_item.c_id from xc_item join xc_car_item on xc_item.id=xc_car_item.i_id join xc_car on xc_car_item.c_id=xc_car.id where
+xc_car.id=#{id} 
+</select>
+<select id="findByUserId" resultType="com.zyd.bean.Items" parameterType="integer">
+select xc_item.* from xc_item join xc_car_item on xc_item.id=xc_car_item.i_id 
+join xc_car on xc_car_item.c_id=xc_car.id where xc_car.u_id=#{userid}
+</select>
+<delete id="deleteItemById" parameterType="integer">
+delete from xc_item where id=#{id}
+</delete>
+
+ </mapper>

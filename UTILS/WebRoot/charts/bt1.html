@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+ <script type="text/javascript">
+var option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: " {b}：{c} "
+    },
+    color:['#D06052','#E29F39','#4C9BC7'],   //环形颜色
+    graphic:{       //图形中间文字
+        type:"text",
+        left:"center",
+        top:"center",
+        style:{
+            text:"66",
+            textAlign:"center",
+            fill:"#fff",
+            fontSize:60
+        }
+    },
+    series: [
+        {
+            name: '',
+            type: 'pie',
+            radius: ['30%', '50%'],       //饼图大小
+            labelLine: {    //图形外文字线
+                normal: {
+                    length: 35,
+                    length2:80
+                }
+
+            },
+            label: {
+                normal: {
+                    formatter: ' {c|{c}%}  \n  {b|{b}}  \n\n',       //图形外文字上下显示
+                    borderWidth: 20,
+                    borderRadius: 4,
+                    padding: [0, -80],          //文字和图的边距
+                    rich: {
+                        a: {
+                            color: '#333',
+                            fontSize: 33,
+                            lineHeight: 20
+                        },
+                        b: {                        //name 文字样式
+                            fontSize: 20,
+                            lineHeight: 20,
+                            color: '#CDCDD0'
+                        },
+                        c: {                   //value 文字样式
+                            fontSize: 25,
+                            lineHeight: 20,
+                            color: '#63BF6A',
+                            align:"center"
+                        }
+                    }
+                }
+            },
+            data: [
+                {value: 5, name: '数据1'},
+                {value: 9, name: '数据2'},
+                {value: 16, name: '数据3'}
+            ]
+        }
+    ]
+};
+
+// 绘制图表。
+echarts.init(document.getElementById('main')).setOption(option);
+       
+ </script>
+
+</body>
+</html>

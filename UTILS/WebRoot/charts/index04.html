@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>YLMarquee文字向上滚动演示_dowebok</title>
+<style>
+#scroll { width: 300px;height:300px; line-height: 24px; margin: 50px auto 0; border: 1px solid #ccc; font-size: 12px;}
+#scroll ul { list-style-type: none;}
+#scroll li { margin-left: 10px;}
+#scroll a { color: #333; text-decoration: none;}
+#scroll a:hover { color: #f50;}
+</style>
+<script src="js/jquery.min.js"></script>
+<script src="js/YLMarquee-1.1.min.js"></script>
+<script>
+$(function(){
+	$("#scroll").YlMarquee({
+        textMode : true,
+        vertical : true,
+        visible : 2,
+        height : 200,
+        step : 1
+    });
+});
+</script>
+</head>
+
+<body>
+<h1>YLMarquee文字向上滚动演示</h1>
+
+<div id="scroll">
+    <ul>
+        <li><a href="https://www.dowebok.com/9.html" target="_blank">·scrollUp - jQuery滚动到顶部插件</a></li>
+        <li><a href="https://www.dowebok.com/8.html" target="_blank">·BlackAndWhite - jQuery图片黑白开关插件</a></li>
+        <li><a href="https://www.dowebok.com/7.html" target="_blank">·Flat UI - 绿色风格精致UI PSD/HTML套装下载</a></li>
+        <li><a href="https://www.dowebok.com/5.html" target="_blank">·jQuery内容展开折叠插件Collapse</a></li>
+        <li><a href="https://www.dowebok.com/4.html" target="_blank">·jQuery立体相册插件Parallax Slider</a></li>
+        <li><a href="https://www.dowebok.com/3.html" target="_blank">·jQuery下拉框美化插件DropKick</a></li>
+        <li><a href="https://www.dowebok.com/2.html" target="_blank">·jQuery幻灯片插件Sudo Slider</a></li>
+        <li><a href="https://www.dowebok.com/9.html" target="_blank">·scrollUp - jQuery滚动到顶部插件</a></li>
+        <li><a href="https://www.dowebok.com/8.html" target="_blank">·BlackAndWhite - jQuery图片黑白开关插件</a></li>
+        <li><a href="https://www.dowebok.com/7.html" target="_blank">·Flat UI - 绿色风格精致UI PSD/HTML套装下载</a></li>
+        <li><a href="https://www.dowebok.com/5.html" target="_blank">·jQuery内容展开折叠插件Collapse</a></li>
+        <li><a href="https://www.dowebok.com/4.html" target="_blank">·jQuery立体相册插件Parallax Slider</a></li>
+        <li><a href="https://www.dowebok.com/3.html" target="_blank">·jQuery下拉框美化插件DropKick</a></li>
+        <li><a href="https://www.dowebok.com/2.html" target="_blank">·jQuery幻灯片插件Sudo Slider</a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>

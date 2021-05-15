@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>图片向左滚动演示</title>
+<style>
+#scroll { width: 900px; border:1px solid #ccc; height:500px;}
+li{ list-style-type:none; float:left ; margin-left:20px; width:200px; position:relative;  }
+@keyframes myfirst{
+from {left:0px;}
+to {left:-900px;}
+}
+li{
+animation:myfirst 2s infinite;
+}
+
+
+
+</style>
+<script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+<h1>图片向左滚动演示</h1>
+
+<div id="scroll">
+	<ul>
+		<li><img src="./images/Chrysanthemum.jpg" /></li>
+		<li><img src="./images/Desert.jpg" /></li>
+		<li><img src="./images/Koala.jpg" /></li>
+		<li><img src="./images/Lighthouse.jpg" /></li>
+		<li><img src="./images/Penguins.jpg" /></li>
+		<li><img src="./images/Tulips.jpg" /></li>
+	</ul>
+</div>
+
+</body>
+</html>
